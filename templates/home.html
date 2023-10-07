@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 <!-- Content -->
-
 {% block content %}
 <!-- posts  -->
 {% for post in post_list %}
@@ -10,6 +9,4 @@
   <p>{{ post.body }}</p>
 </div>
 
-{% endfor %}
-<!--  -->
-{% endblock content %}
+{% endfor %} {% endblock content %}
