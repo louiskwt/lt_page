@@ -2,17 +2,27 @@
 
 <!-- Content -->
 {% block content %}
-<ul class="divide-y-8 divide-gray-200">
+<ul class="divide-y-2 divide-gray-200 border-b-2">
   <!-- posts  -->
   {% for post in post_list %}
   <li class="py-12">
     <article>
       <div class="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
+        <dl>
+          <dt class="sr-only">Published on</dt>
+          <dd class="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+            <time datetime="{{ post.created_at }}">{{ post.created_at }}</time>
+          </dd>
+        </dl>
         <div class="space-y-5 xl:col-span-3">
           <div class="space-y-6">
             <div>
               <h2>{{ post.title }}</h2>
             </div>
+            <div class="prose max-w-none text-gray-500 dark:text-gray-400">{{ post.body }}</div>
+          </div>
+          <div class="text-base font-medimu leading-6">
+            <a class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400" aria-label='Read "Release of Tailwind Nextjs Starter Blog v2.0"' href="{% url 'post_detail' post.pk %}">Read more →</a>
           </div>
         </div>
       </div>
