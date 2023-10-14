@@ -2,6 +2,13 @@
 
 <!-- Content -->
 {% block content %}
+<div class="divide-y divide-gray-200 border-b-2">
+  <div class="space-y-2 pb-8 pt-6 md:space-y-5 border-solid">
+    <h1 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">Latest</h1>
+    <p class="text-lg leading-7 text-gray-500">My thoughts as an indine hacker</p>
+  </div>
+</div>
+<!-- Blog Lists -->
 <ul class="divide-y-2 divide-gray-200 border-b-2">
   <!-- posts  -->
   {% for post in post_list %}
