@@ -18,7 +18,7 @@
         <dl>
           <dt class="sr-only">Published on</dt>
           <dd class="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-            <time datetime="{{ post.created_at }}">{{ post.created_at }}</time>
+            <time datetime="{{ post.created_at }}">{{ post.created_at|date }}</time>
           </dd>
         </dl>
         <div class="space-y-5 xl:col-span-3">
