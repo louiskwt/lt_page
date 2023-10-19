@@ -829,6 +829,10 @@ video {
   padding-top: 1.5rem;
 }
 
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1006,6 +1010,10 @@ video {
 
   .md\:mt-10 {
     margin-top: 2.5rem;
+  }
+
+  .md\:mt-2 {
+    margin-top: 0.5rem;
   }
 
   .md\:space-y-5 > :not([hidden]) ~ :not([hidden]) {
