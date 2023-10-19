@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+{% load static %}
+{% block content %}
 <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
   <article>
     <div class="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
@@ -19,7 +21,7 @@
           <dd>
             <ul class="flex flex-wrap justify-center gap-4 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
               <li class="flex items-center space-x-2">
-                <img alt="avatar" loading="lazy" width="38" height="38" decoding="async" data-nimg="1" class="h-10 w-10 rounded-full" srcset="/_next/image?url=%2Fstatic%2Fimages%2Favatar.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Favatar.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Fstatic%2Fimages%2Favatar.png&amp;w=96&amp;q=75" style="color: transparent" />
+                <img alt="avatar" loading="lazy" width="38" height="38" class="h-10 w-10 rounded-full" src="{% static 'img/profile.jpg' %}" style="color: transparent" />
                 <dl class="whitespace-nowrap text-sm font-medium leading-5">
                   <dt class="sr-only">Name</dt>
                   <dd class="text-gray-900">{{post.author}}</dd>
