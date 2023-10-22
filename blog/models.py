@@ -13,7 +13,7 @@ class Post(models.Model):
         PUBLISHED = 'PB', 'Published'
         
     title = models.CharField(max_length=256)
-    slug = models.SlugField(max_length=256)
+    slug = models.SlugField(max_length=256, unique_for_date='published_at')
     author = models.ForeignKey("auth.User", on_delete=models.CASCADE, related_name='blog_posts')
     body = models.TextField()
     status = models.CharField(max_length=2, choices=Status.choices, default=Status.DRAFT)
