@@ -595,14 +595,6 @@ video {
   margin-top: 2rem;
 }
 
-.mt-12 {
-  margin-top: 3rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
 .block {
   display: block;
 }
@@ -775,10 +767,6 @@ video {
   border-bottom-width: 2px;
 }
 
-.border-t-2 {
-  border-top-width: 2px;
-}
-
 .border-solid {
   border-style: solid;
 }
@@ -821,16 +809,16 @@ video {
   padding-bottom: 2rem;
 }
 
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
 .pt-4 {
   padding-top: 1rem;
 }
 
 .pt-6 {
   padding-top: 1.5rem;
-}
-
-.pt-10 {
-  padding-top: 2.5rem;
 }
 
 .text-center {
@@ -917,11 +905,6 @@ video {
   color: rgb(14 165 233 / var(--tw-text-opacity));
 }
 
-.text-sky-400 {
-  --tw-text-opacity: 1;
-  color: rgb(56 189 248 / var(--tw-text-opacity));
-}
-
 .opacity-95 {
   opacity: 0.95;
 }
@@ -940,16 +923,6 @@ video {
 }
 
 @media (prefers-color-scheme: dark) {
-  .dark\:divide-gray-700 > :not([hidden]) ~ :not([hidden]) {
-    --tw-divide-opacity: 1;
-    border-color: rgb(55 65 81 / var(--tw-divide-opacity));
-  }
-
-  .dark\:divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
-    --tw-divide-opacity: 1;
-    border-color: rgb(229 231 235 / var(--tw-divide-opacity));
-  }
-
   .dark\:bg-gray-950 {
     --tw-bg-opacity: 1;
     background-color: rgb(3 7 18 / var(--tw-bg-opacity));
@@ -981,14 +954,6 @@ video {
 }
 
 @media (min-width: 640px) {
-  .sm\:mt-10 {
-    margin-top: 2.5rem;
-  }
-
-  .sm\:mt-8 {
-    margin-top: 2rem;
-  }
-
   .sm\:mt-4 {
     margin-top: 1rem;
   }
@@ -1029,14 +994,6 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:mt-12 {
-    margin-top: 3rem;
-  }
-
-  .md\:mt-10 {
-    margin-top: 2.5rem;
-  }
-
   .md\:mt-2 {
     margin-top: 0.5rem;
   }
@@ -1110,12 +1067,6 @@ video {
     margin-bottom: calc(2rem * var(--tw-space-y-reverse));
   }
 
-  .xl\:divide-y > :not([hidden]) ~ :not([hidden]) {
-    --tw-divide-y-reverse: 0;
-    border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
-    border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
-  }
-
   .xl\:divide-y-0 > :not([hidden]) ~ :not([hidden]) {
     --tw-divide-y-reverse: 0;
     border-top-width: calc(0px * calc(1 - var(--tw-divide-y-reverse)));
@@ -1128,26 +1079,9 @@ video {
     border-bottom-width: calc(2px * var(--tw-divide-y-reverse));
   }
 
-  .xl\:divide-y-reverse > :not([hidden]) ~ :not([hidden]) {
-    --tw-divide-y-reverse: 1;
-  }
-
   .xl\:divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
     --tw-divide-opacity: 1;
     border-color: rgb(229 231 235 / var(--tw-divide-opacity));
-  }
-
-  .xl\:border-b {
-    border-bottom-width: 1px;
-  }
-
-  .xl\:border-b-2 {
-    border-bottom-width: 2px;
-  }
-
-  .xl\:border-gray-200 {
-    --tw-border-opacity: 1;
-    border-color: rgb(229 231 235 / var(--tw-border-opacity));
   }
 
   .xl\:px-0 {
@@ -1172,11 +1106,6 @@ video {
   }
 
   @media (prefers-color-scheme: dark) {
-    .xl\:dark\:divide-gray-700 > :not([hidden]) ~ :not([hidden]) {
-      --tw-divide-opacity: 1;
-      border-color: rgb(55 65 81 / var(--tw-divide-opacity));
-    }
-
     .xl\:dark\:border-gray-700 {
       --tw-border-opacity: 1;
       border-color: rgb(55 65 81 / var(--tw-border-opacity));
