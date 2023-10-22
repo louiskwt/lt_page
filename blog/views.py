@@ -1,13 +1,14 @@
-from django.shortcuts import render
-from django.views.generic import DetailView, ListView
+from django.http import Http404
+from django.shortcuts import get_object_or_404, render
 
 from .models import Post
 
 
-class BlogListView(ListView):
-    model = Post
-    template_name = "home.html"
+def home(request):
+    posts = Post.published.all()
+    return render(request, 'home.html', {'post_list': posts})
 
-class BlogDetailView(DetailView):
-    model = Post
-    template_name = "post_detail.html"
+def post_detail(request, id):
+    post = get_object_or_404(Post, id=id, status=Post.Status.PUBLISHED)
+
+    return render(request, 'post_detail.html', {'post': post})
