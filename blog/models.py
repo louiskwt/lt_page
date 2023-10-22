@@ -3,6 +3,10 @@ from django.urls import reverse
 from django.utils import timezone
 
 
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status=Post.Status.PUBLISHED)
+
 class Post(models.Model):
     class Status(models.TextChoices):
         DRAFT = 'DF', 'Draft'
@@ -16,6 +20,10 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     published_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
+
+    # Model managers
+    objects = models.Manager() # the default manager
+    published = PublishedManager() # custom manager
 
     class Meta:
         ordering = ['-published_at']
