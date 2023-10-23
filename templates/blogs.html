@@ -43,12 +43,10 @@
       </ul>
       <div class="space-y-2 pb-8 pt-6 md:space-y-5">
         <nav class="flex justify-between">
-          <button class="cursor-auto disabled:opacity-50" disabled="">Previous</button
-          ><span
-            >1<!-- -->
-            of
-            <!-- -->3</span
-          ><a rel="next" href="/blog/page/2">Next</a>
+          <button class="cursor-auto disabled:opacity-50" {% if not post_list.has_previous %}disabled{% endif %}>Previous</button>
+
+          <span>{{ post_list.number }} of {{ post_list.paginator.num_pages }}</span>
+          <button rel="next" class="disabled:opacity-50" href="?page={{ blog_list.next_page_number }}" {% if not post_list.has_next %}disabled{% endif %}>Next</button>
         </nav>
       </div>
     </div>
