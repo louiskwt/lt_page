@@ -2,41 +2,56 @@
 
 <!-- Content -->
 {% block content %}
-<div class="divide-y divide-gray-200 border-b-2">
-  <div class="space-y-2 pb-8 pt-6 md:space-y-5 border-solid">
-    <h1 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">Latest</h1>
-    <p class="text-lg leading-7 text-gray-500">My thoughts as an indine hacker</p>
+<div>
+  <div class="pb-6 pt-6"><h1 class="sm:hidden text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">All Posts</h1></div>
+  <div class="flex sm:space-x-24">
+    <!-- Tag Lists -->
+    <div class="hidden h-full sm:flex flex-wrap bg-gray-50 dark:bg-gray-200 shadow-md pt-5 dark:shadow-gray-800/40 rounded min-w-[260px] max-w-[260px]">
+      <div class="py-4 px-6">
+        <h3 class="text-primary-500 font-bold uppercase">Posts by Categories</h3>
+        <ul></ul>
+      </div>
+    </div>
+    <div>
+      <ul class="divide-y-2 divide-gray-200">
+        <!-- posts  -->
+        {% for post in post_list %}
+        <li class="py-12">
+          <article>
+            <div class="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
+              <dl>
+                <dt class="sr-only">Published on</dt>
+                <dd class="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                  <time datetime="{{ post.created_at }}">{{ post.created_at|date }}</time>
+                </dd>
+              </dl>
+              <div class="space-y-5 xl:col-span-3">
+                <div class="space-y-6">
+                  <div>
+                    <h2 class="text-2xl font-bold leading-8">{{ post.title }}</h2>
+                  </div>
+                  <div class="prose max-w-none text-gray-500 dark:text-gray-400">{{ post.body }}</div>
+                </div>
+                <div class="text-base font-medimu leading-6">
+                  <a class="text-sky-500 hover:text-primary-600 dark:hover:text-sky-800" aria-label='Read "Release of Tailwind Nextjs Starter Blog v2.0"' href="{{ post.get_absolute_url }}">Read more →</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </li>
+        {% endfor %}
+      </ul>
+      <div class="space-y-2 pb-8 pt-6 md:space-y-5">
+        <nav class="flex justify-between">
+          <button class="cursor-auto disabled:opacity-50" disabled="">Previous</button
+          ><span
+            >1<!-- -->
+            of
+            <!-- -->3</span
+          ><a rel="next" href="/blog/page/2">Next</a>
+        </nav>
+      </div>
+    </div>
   </div>
 </div>
-<!-- Blog Lists -->
-<ul class="divide-y-2 divide-gray-200">
-  <!-- posts  -->
-  {% for post in post_list %}
-  <li class="py-12">
-    <article>
-      <div class="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-        <dl>
-          <dt class="sr-only">Published on</dt>
-          <dd class="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-            <time datetime="{{ post.created_at }}">{{ post.created_at|date }}</time>
-          </dd>
-        </dl>
-        <div class="space-y-5 xl:col-span-3">
-          <div class="space-y-6">
-            <div>
-              <h2 class="text-2xl font-bold leading-8">{{ post.title }}</h2>
-            </div>
-            <div class="prose max-w-none text-gray-500 dark:text-gray-400">{{ post.body }}</div>
-          </div>
-          <div class="text-base font-medimu leading-6">
-            <a class="text-sky-500 hover:text-primary-600 dark:hover:text-sky-800" aria-label='Read "Release of Tailwind Nextjs Starter Blog v2.0"' href="{{ post.get_absolute_url }}">Read more →</a>
-          </div>
-        </div>
-      </div>
-    </article>
-  </li>
-  {% endfor %}
-</ul>
-<div class="flex justify-end text-base font-medium leading-6"><a class="text-sky-500 hover:text-sky-800 dark:hover:text-primary-400" aria-label="All posts" href="/blog">All Posts →</a></div>
-
 {% endblock content %}
