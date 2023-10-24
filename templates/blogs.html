@@ -8,8 +8,14 @@
     <!-- Tag Lists -->
     <div class="hidden h-full sm:flex flex-wrap bg-gray-50 dark:bg-gray-200 shadow-md pt-5 dark:shadow-gray-800/40 rounded min-w-[260px] max-w-[260px]">
       <div class="py-4 px-6">
-        <h3 class="text-primary-500 font-bold uppercase">All Posts by Categories</h3>
-        <ul></ul>
+        <h3 class="text-primary-500 font-bold uppercase">All Posts</h3>
+        <ul>
+          {% for tag in tag_list %}
+          <li class="my-6">
+            <a class="px-3 py-2 text-sm font-medium uppercase text-sky-400 hover:text-sky-500" aria-label="View posts tagged next-js" href="/tags/next-js">{{ tag.name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
     <div>

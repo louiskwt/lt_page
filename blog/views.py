@@ -19,6 +19,8 @@ def blog_list(request, tag_slug=None):
     if tag_slug:
         tag = get_object_or_404(Tag, slug=tag_slug)
         post_list = post_list.filter(tags__in=[tag])
+    
+    tag_list = [tag for tag in Tag.objects.all()]
 
     paginator = Paginator(post_list, 5)
     page_number = request.GET.get('page', 1)
@@ -28,8 +30,9 @@ def blog_list(request, tag_slug=None):
         posts = paginator.page(1)
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
+    
 
-    return render(request, 'blogs.html', {'post_list': posts, 'tag': tag }) 
+    return render(request, 'blogs.html', {'post_list': posts, 'tag': tag, 'tag_list': tag_list }) 
 
 def post_detail(request, year, month, day, post):
     post = get_object_or_404(Post, status=Post.Status.PUBLISHED, slug=post, published_at__year=year, published_at__month=month, published_at__day=day)
