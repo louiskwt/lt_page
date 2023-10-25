@@ -620,6 +620,10 @@ video {
   margin-top: 2rem;
 }
 
+.ml-4 {
+  margin-left: 1rem;
+}
+
 .block {
   display: block;
 }
@@ -695,6 +699,10 @@ video {
 
 .cursor-auto {
   cursor: auto;
+}
+
+.list-disc {
+  list-style-type: disc;
 }
 
 .grid-rows-\[auto_1fr\] {
