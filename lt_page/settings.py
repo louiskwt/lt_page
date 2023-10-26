@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "blog.apps.BlogConfig",
     "taggit",
+    "markdownify"
 ]
 
 MIDDLEWARE = [
@@ -114,3 +115,9 @@ STATICFILES_DIRS = [str(BASE_DIR.joinpath("static"))]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+MARKDOWNIFY = {
+  "default": {
+    "WHITELIST_TAGS": ["a", "p", "h1", ]
+  },
+}
