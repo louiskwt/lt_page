@@ -22,6 +22,7 @@ class Post(models.Model):
     published_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
     tags = TaggableManager()
+    description = models.CharField(max_length=256, default="")
 
     # Model managers
     objects = models.Manager() # the default manager
