@@ -19,9 +19,8 @@ def blog_list(request, tag_slug=None):
     if tag_slug:
         tag = get_object_or_404(Tag, slug=tag_slug)
         post_list = post_list.filter(tags__in=[tag])
-    
-    tag_list = [tag for tag in Tag.objects.all()]
-
+        
+    tag_list = [{ 'tag_name': tag.name, 'count': len([p for p in post_list if p.tags.filter(name = tag.name)]) } for tag in Tag.objects.all()]
     paginator = Paginator(post_list, 5)
     page_number = request.GET.get('page', 1)
     try:

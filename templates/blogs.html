@@ -12,7 +12,7 @@
         <ul>
           {% for tag in tag_list %}
           <li class="my-6">
-            <a class="px-3 py-2 text-sm font-medium uppercase text-sky-400 hover:text-sky-500" aria-label="View posts tagged next-js" href="/tags/next-js">{{ tag.name }}</a>
+            <a class="px-3 py-2 text-sm font-medium uppercase text-sky-400 hover:text-sky-500" aria-label="View posts tagged next-js" href="/tags/next-js">{{ tag.tag_name }} ({{ tag.count }})</a>
           </li>
           {% endfor %}
         </ul>
