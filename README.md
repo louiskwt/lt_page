@@ -1,5 +1,7 @@
 # My (New) Personal Site
 
+- a new personal page for myself
+
 ## The goal for this project
 
 1. start blogging
