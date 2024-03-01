@@ -1,6 +1,5 @@
-# My (New) Personal Site
+# My Personal Blog
 
-- a new personal page for myself
 
 ## The goal for this project
 
@@ -10,8 +9,3 @@
 
 ## My Plan
 
-- ~Using Django at first~
-- ~Deploying to Fly.io~
-- Feeling annoyed about deployment
-- Using Django and having a db (even sqlite) seem be an overkill
-- try hugo
